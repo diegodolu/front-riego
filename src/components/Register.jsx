@@ -1,6 +1,7 @@
 // Register.jsx
 import { useState } from 'react';
 import axios from 'axios';
+import axiosInstance from '../axiosInstance';
 
 const rolesDict = {
     'Administrador': 1,
@@ -19,12 +20,13 @@ const Register = () => {
         event.preventDefault();
 
         try {
-            const response = await axios.post('http://localhost:8000/api/register/', {
+            const response = await axiosInstance.post('register/', {
                 nombre: nombre,
                 username: username,
                 password: password,
                 idRol: rolesDict[rol]  // Asignar el ID del rol seleccionado
             });
+
 
             console.log('Usuario registrado:', response.data);
             // Aquí podrías redirigir al usuario a la página de login o mostrar un mensaje de éxito

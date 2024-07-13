@@ -9,11 +9,6 @@ const App = () => {
     <Router>
       <Routes>
         <Route path="/" element={<Login />} />
-        <Route path="/register" element={
-          <ProtectedRoute allowedRoles={[3]}>
-            <Register />
-          </ProtectedRoute>
-        } />
         <Route path="/dashboard" element={
           <ProtectedRoute allowedRoles={[3, 1, 2]}> {/* Ajusta los roles según sea necesario */}
             <Dashboard />

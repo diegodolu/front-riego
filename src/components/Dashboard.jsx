@@ -1,5 +1,6 @@
 import React from "react";
 import useAuth from "../hook/useAuth"; // Importa el hook useAuth para obtener el token y userRole
+import Register from "./Register";
 
 const Dashboard = () => {
   const { userRole } = useAuth(); // Obtén userRole desde useAuth
@@ -40,6 +41,8 @@ const Dashboard = () => {
       >
         Botón Desarrollador
       </button>
+
+      {userRole === 3 && <Register />}
     </div>
   );
 };
