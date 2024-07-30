@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import RecuperarPass from './RecuperarPass';
 
 const Login = () => {
     const [username, setUsername] = useState('');
@@ -12,7 +13,7 @@ const Login = () => {
         event.preventDefault();
 
         try {
-            const response = await axios.post('http://localhost:8000/api/token/', {
+            const response = await axios.post('https://3p7jzhtc-8000.brs.devtunnels.ms/api/token/', {
                 username: username,
                 password: password
             });
@@ -41,6 +42,7 @@ const Login = () => {
                 <br />
                 <button type="submit">Login</button>
             </form>
+            <RecuperarPass />
         </div>
     );
 };

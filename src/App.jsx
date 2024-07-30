@@ -3,6 +3,7 @@ import Login from "./components/Login";
 import Register from "./components/Register";
 import Dashboard from "./components/Dashboard";
 import ProtectedRoute from './components/ProtectedRoute'; // Asegúrate de importar ProtectedRoute
+import ResetPass from "./components/ResetPass";
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
             <Dashboard />
           </ProtectedRoute>
         } />
+        <Route path="/reset-password/:token" element={<ResetPass />}/>
       </Routes>
     </Router>
   );
